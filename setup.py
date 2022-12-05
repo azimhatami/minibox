@@ -13,5 +13,11 @@ setup(
     discription='File synchronization tool',
     url='https://github.com/azimhatami/minibox',
     packages=find_packages(),
-    install_requires=dependencies
+    install_requires=dependencies,
+    license='MIT',
+    entry_points={
+        'console_scripts': [
+            'minibox = minibox:Minibox.quickstart',
+        ]
+    },
 )
