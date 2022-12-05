@@ -1,4 +1,11 @@
+import re
+from os import path
+
 from setuptools import setup, find_packages
+
+
+with open(path.join(path.dirname(__file__), 'minibox', '__init__.py')) as f:
+    _version = re.match(r'.*__version__ = \'(.*?)\'', f.read(), re.S).group(1)
 
 
 dependencies = [
@@ -8,7 +15,7 @@ dependencies = [
 
 setup(
     name='minibox',
-    version='0.1.0',
+    version=_version,
     author='Azim Hatami',
     discription='File synchronization tool',
     url='https://github.com/azimhatami/minibox',
